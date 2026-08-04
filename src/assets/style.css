@@ -1,1 +1,102 @@
 @import 'tailwindcss';
+
+/* Everforest color palette https://everforest.vercel.app/palette */
+:root {
+  /* Backgrounds */
+  --theme-bg: #fffbef;
+  --theme-bg-muted: #f8f5e4;
+  --theme-bg-subtle: #f2efdf;
+  --theme-surface: #edeada;
+  --theme-surface-hover: #e8e5d5;
+  --theme-border: #bec5b2;
+
+  /* Foreground */
+  --theme-fg: #5c6a72;
+  --theme-fg-muted: #829181;
+  --theme-fg-subtle: #a6b0a0;
+
+  /* Semantic */
+  --theme-primary: #3a94c5;
+  --theme-success: #8da101;
+  --theme-warning: #dfa000;
+  --theme-danger: #f85552;
+  --theme-info: #35a77c;
+
+  /* Raw palette */
+  --theme-red: #f85552;
+  --theme-orange: #f57d26;
+  --theme-yellow: #dfa000;
+  --theme-green: #8da101;
+  --theme-aqua: #35a77c;
+  --theme-blue: #3a94c5;
+  --theme-purple: #df69ba;
+}
+
+.dark {
+  /* Backgrounds */
+  --theme-bg: #272e33;
+  --theme-bg-muted: #2e383c;
+  --theme-bg-subtle: #374145;
+  --theme-surface: #414b50;
+  --theme-surface-hover: #495156;
+  --theme-border: #4f5b58;
+
+  /* Foreground */
+  --theme-fg: #d3c6aa;
+  --theme-fg-muted: #9da9a0;
+  --theme-fg-subtle: #7a8478;
+
+  /* Semantic */
+  --theme-primary: #7fbbb3;
+  --theme-success: #a7c080;
+  --theme-warning: #dbbc7f;
+  --theme-danger: #e67e80;
+  --theme-info: #83c092;
+
+  /* Raw palette */
+  --theme-red: #e67e80;
+  --theme-orange: #e69875;
+  --theme-yellow: #dbbc7f;
+  --theme-green: #a7c080;
+  --theme-aqua: #83c092;
+  --theme-blue: #7fbbb3;
+  --theme-purple: #d699b6;
+}
+
+@theme {
+  --color-bg: var(--theme-bg);
+  --color-bg-muted: var(--theme-bg-muted);
+  --color-bg-subtle: var(--theme-bg-subtle);
+  --color-surface: var(--theme-surface);
+  --color-surface-hover: var(--theme-surface-hover);
+  --color-border: var(--theme-border);
+
+  --color-fg: var(--theme-fg);
+  --color-fg-muted: var(--theme-fg-muted);
+  --color-fg-subtle: var(--theme-fg-subtle);
+
+  --color-primary: var(--theme-primary);
+  --color-success: var(--theme-success);
+  --color-warning: var(--theme-warning);
+  --color-danger: var(--theme-danger);
+  --color-info: var(--theme-info);
+
+  --color-red: var(--theme-red);
+  --color-orange: var(--theme-orange);
+  --color-yellow: var(--theme-yellow);
+  --color-green: var(--theme-green);
+  --color-aqua: var(--theme-aqua);
+  --color-blue: var(--theme-blue);
+  --color-purple: var(--theme-purple);
+}
+
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+
+    color: var(--theme-fg);
+    background-color: var(--theme-bg);
+  }
+}
