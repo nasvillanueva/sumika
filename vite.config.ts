@@ -1,25 +1,16 @@
-import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "vitest/config";
-import { sveltekit } from "@sveltejs/kit/vite";
+import { fileURLToPath, URL } from 'node:url'
 
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
 export default defineConfig({
-  server: {
-    allowedHosts: ["nexus.local"],
+  plugins: [vue(), vueDevTools(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
-  plugins: [tailwindcss(), sveltekit()],
-  test: {
-    globals: true,
-    expect: { requireAssertions: true },
-    projects: [
-      {
-        extends: "./vite.config.ts",
-        test: {
-          name: "server",
-          environment: "node",
-          include: ["src/**/*.{test,spec}.{js,ts}"],
-          exclude: ["src/**/*.svelte.{test,spec}.{js,ts}"],
-        },
-      },
-    ],
-  },
-});
+})
