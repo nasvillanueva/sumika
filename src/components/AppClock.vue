@@ -21,8 +21,8 @@ onUnmounted(() => clearInterval(timerIntervalId));
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center">
-    <p class="text-8xl font-bold text-orange">{{ displayedDate }}</p>
-    <p class="text-6xl font-semibold">{{ displayedTime }}</p>
+  <div class="flex flex-col">
+    <p class="text-6xl font-bold text-orange">{{ displayedTime }}</p>
+    <p class="text-4xl font-semibold">{{ displayedDate }}</p>
   </div>
 </template>
