@@ -5,6 +5,7 @@ import { onMounted, ref } from "vue";
 const TASKS_URL = `${import.meta.env.SUMIKA_YUVOMI_BASE_URL}/api/v1/tasks`;
 
 const tasks = ref([]);
+const hasError = ref(false);
 const errorMessage = ref(null);
 
 onMounted(async () => {
@@ -51,6 +52,7 @@ onMounted(async () => {
 
     tasks.value = filteredTasks;
   } catch (e) {
+    hasError.value = true;
     errorMessage.value = e.message;
   }
 });
@@ -59,8 +61,10 @@ onMounted(async () => {
 <template>
   <div class="flex flex-col py-4 w-2xl">
     <p class="text-4xl font-bold text-orange">Tasks</p>
-    <p v-if="errorMessage" class="text-2xl font-semibold text-blue">{{ errorMessage }}</p>
-    <ul v-if="!errorMessage">
+
+    <p v-if="hasError" class="text-2xl font-semibold text-blue">{{ errorMessage }}</p>
+
+    <ul v-if="!hasError">
       <li
         v-for="task in tasks"
         :key="task.id"
