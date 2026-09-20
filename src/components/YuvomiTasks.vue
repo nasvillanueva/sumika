@@ -72,7 +72,7 @@ onMounted(async () => {
       >
         <div class="grow">
           <p class="text-2xl font-medium text-blue mb-2">{{ task.title }}</p>
-          <p class="flex">{{ task.due_date }} {{ task.due_time }}</p>
+          <p>{{ task.due_date }} {{ task.due_time }}</p>
           <p class="uppercase text-sm text-fg-muted">{{ task.category }}</p>
         </div>
         <div>
