@@ -5,7 +5,7 @@ import YuvomiTasks from "@/components/YuvomiTasks.vue";
 
 <template>
   <div class="flex h-full w-full justify-center py-16">
-    <div class="flex flex-col gap-8">
+    <div class="flex gap-4">
       <AppClock />
       <YuvomiTasks />
     </div>
