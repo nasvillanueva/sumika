@@ -32,7 +32,7 @@ onMounted(async () => {
       const { id, title, due_date, due_time, category, assigned_users } = task;
 
       const dueTime = due_time ?? "00:00";
-      const dueDate = dayjs(`${due_date}T${dueTime}+09:00`);
+      const dueDate = dayjs(`${due_date}T${dueTime}`);
 
       const isDueSoon = twoDaysAfterNow.isBefore(dueDate, "day");
 
