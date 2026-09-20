@@ -9,10 +9,9 @@ const errorMessage = ref(null);
 
 onMounted(async () => {
   try {
-    const queryParams = {
+    const queryParamsString = new URLSearchParams({
       status: "open",
-    };
-    const queryParamsString = new URLSearchParams(queryParams).toString();
+    }).toString();
 
     const response = await fetch(`${TASKS_URL}?${queryParamsString}`, {
       method: "GET",
